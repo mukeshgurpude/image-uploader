@@ -1,5 +1,8 @@
 .card {
-  padding: 1em;
+  padding: 1.5em;
   border-radius: .5em;
   box-shadow: 0 0 1em rgba(0, 0, 0, .2);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: .5em;
 }

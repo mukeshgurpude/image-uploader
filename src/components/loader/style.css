@@ -1,0 +1,28 @@
+.outer {
+  --height: 8px;
+  --radius: 5px;
+  --loader-width: 15%;
+  width: 300px;
+  height: var(--height);
+  background-color: #e2e2e2;
+  border-radius: var(--radius);
+  position: relative;
+}
+.outer .inner {
+  height: var(--height);
+  background-color: #2F80ED;
+  border-radius: var(--radius);
+  width: var(--loader-width);
+  position: absolute;
+  left: 0;
+  animation: traverse 2s linear infinite;
+}
+
+@keyframes traverse {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - var(--loader-width));
+  }
+}
