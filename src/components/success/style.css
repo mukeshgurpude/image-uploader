@@ -1,0 +1,43 @@
+.checkmark {
+  --size: 1.5em;
+  background-color: var(--success);
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.img {
+  width: var(--max-width);
+  border-radius: 5px;
+}
+
+.copy_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5em;
+  max-width: var(--max-width);
+  border: 1px solid var(--border-color);
+  background-color: var(--secondary-bg);
+  border-radius: 5px;
+  padding: .5em .2em;
+}
+
+.copy_box p {text-overflow: ellipsis; overflow: hidden; margin: 0;}
+.copy_box button {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: .5em;
+  white-space: nowrap;
+}
+button.copied {
+  background-color: var(--success);
+  color: #fff;
+}

@@ -15,7 +15,15 @@ html, body {
 	box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6, h7 {margin-bottom: 0;}
+
 #app {
+	--primary: #2F80ED;
+	--border-color: #E0E0E0;
+	--secondary-bg: #F6F8FB;
+	--success: #219653;
+	--max-width: 350px;
+
 	height: 100%;
 	display: grid;
 	place-items: center;

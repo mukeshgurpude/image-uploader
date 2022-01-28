@@ -5,4 +5,5 @@
   display: flex;
   flex-flow: column nowrap;
   gap: .5em;
+  align-items: center;
 }

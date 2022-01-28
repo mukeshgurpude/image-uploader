@@ -10,7 +10,7 @@
 }
 .outer .inner {
   height: var(--height);
-  background-color: #2F80ED;
+  background-color: var(--primary);
   border-radius: var(--radius);
   width: var(--loader-width);
   position: absolute;

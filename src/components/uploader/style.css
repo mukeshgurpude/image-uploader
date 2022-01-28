@@ -1,0 +1,25 @@
+#file {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  padding: 1em;
+  width: var(--max-width);
+  border: 2px dashed var(--primary);
+  border-radius: 10px;
+  background-color: var(--secondary-bg);
+  color: #BDBDBD;
+}
+
+#file ~ p {
+  margin: 0;
+}
+
+#upload {
+  background-color: var(--primary);
+  padding: 8px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#upload input {display: none;}
