@@ -1,6 +1,8 @@
+import style from './style.css';
+
 export default function Wrapper({children}) {
   return (
-    <div id="card">
+    <div className={style.card}>
       {children}
     </div>
   )

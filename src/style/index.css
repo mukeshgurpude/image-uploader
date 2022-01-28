@@ -17,4 +17,6 @@ html, body {
 
 #app {
 	height: 100%;
+	display: grid;
+	place-items: center;
 }
