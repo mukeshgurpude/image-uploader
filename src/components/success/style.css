@@ -29,13 +29,14 @@
 }
 
 .copy_box p {text-overflow: ellipsis; overflow: hidden; margin: 0;}
-.copy_box button {
+.copy_box button, .button {
   background-color: var(--primary);
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: .5em;
   white-space: nowrap;
+  cursor: pointer;
 }
 button.copied {
   background-color: var(--success);

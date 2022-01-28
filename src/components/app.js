@@ -6,21 +6,20 @@ import Loader from './loader'
 import Success from './success'
 
 const reducer = (state, action) => {
-	console.log(action, state)
 	switch(action.type) {
 		case 'upload':
 			return {...state, pos: 0}
 		case 'uploading':
 			return {...state, pos: 1}
 		case 'success':
-			return {...state, pos: 2, img: URL.createObjectURL(action.data)}
+			return {...state, pos: 2, img: URL.createObjectURL(action.image), url: action.url}
 		default:
 			return state
 	}
 }
 
 const App = () => {
-	const [state, setState] = useReducer(reducer, {pos: 2, img: '', url: ''});
+	const [state, setState] = useReducer(reducer, {pos: 0, img: '', url: ''});
 	return <div id="app">
 			<Wrapper dispatch={setState} state={state}>
 			{

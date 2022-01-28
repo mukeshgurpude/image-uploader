@@ -1,6 +1,7 @@
 import { useRef } from 'preact/hooks'
 import style from './style.css'
 import image from '../../assets/image.svg'
+import { upload } from '../../api/image'
 
 export default function Uploader({dispatch}) {
   const div = useRef(null)
@@ -10,9 +11,10 @@ export default function Uploader({dispatch}) {
     const files = ev?.dataTransfer?.files || ev.target.files
     const file_to_upload = files[0]
     dispatch({type: 'uploading'})
-    setTimeout(() => {
-      dispatch({type: 'success', data: file_to_upload})
-    }, 2000)
+    upload(file_to_upload)
+      .then(res => {
+        dispatch({type: 'success', image: file_to_upload, url: res.data.Key})
+      })
   }
 
   return <>
