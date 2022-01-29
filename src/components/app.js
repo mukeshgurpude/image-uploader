@@ -27,6 +27,7 @@ const App = () => {
 	});
 
 	useEffect(() => {
+		if (!process.isClient) return
 		localStorage.setItem('theme', state.theme)
 		document.documentElement.setAttribute('data-theme', state.theme)
 	}, [state.theme]);
