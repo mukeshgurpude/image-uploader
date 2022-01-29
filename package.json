@@ -1,7 +1,8 @@
 {
   "private": true,
   "name": "image-uploader",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "homepage": "/image-uploader",
   "license": "MIT",
   "scripts": {
     "build": "preact build",
