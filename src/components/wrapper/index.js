@@ -6,8 +6,10 @@ export default function Wrapper({children, ...props}) {
   return <div className={style.card}>
     <button
       className={style.button}
-      children={props.state.theme==='dark' ? 'light' : 'dark'}
       onClick={() => {props.dispatch({type: 'toggle'})}}
+      dangerouslySetInnerHTML={{
+        __html: (props.state.theme === 'light') ? 'Dark &#127769;' : 'Light &#9728;'
+      }}
     />
     {element}
   </div>;
