@@ -7,7 +7,7 @@
   border: 2px dashed var(--primary);
   border-radius: 10px;
   background-color: var(--secondary-bg);
-  color: #BDBDBD;
+  color: #545454;
 }
 
 #file ~ p {
