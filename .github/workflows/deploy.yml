@@ -23,10 +23,11 @@ jobs:
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ secrets.url }}
-          PUBLIC_KEY: ${{ secrets.public_key }}
 
       - name: Build and Deploy
         run: |
           npm run build
           gh-pages -d build
+        env:
+          URL: ${{ secrets.url }}
+          PUBLIC_KEY: ${{ secrets.public_key }}
