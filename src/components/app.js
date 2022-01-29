@@ -20,16 +20,24 @@ const reducer = (state, action) => {
 	}
 }
 
+function getCurrentTheme() {
+	if (typeof window !== "undefined") { 
+		return localStorage.getItem('theme') || 'light'
+	}
+	return 'light'
+}
+
 const App = () => {
 	const [state, setState] = useReducer(reducer, {
 		pos: 0, img: '',
-		url: '', theme: localStorage.getItem('theme') || 'light'
+		url: '', theme: getCurrentTheme()
 	});
 
 	useEffect(() => {
-		if (!process.isClient) return
-		localStorage.setItem('theme', state.theme)
-		document.documentElement.setAttribute('data-theme', state.theme)
+		if (typeof window !== "undefined") {
+			localStorage.setItem('theme', state.theme)
+			document.documentElement.setAttribute('data-theme', state.theme)
+		}
 	}, [state.theme]);
 
 	return <div id="app">
