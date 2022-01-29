@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useReducer } from 'preact/hooks'
+import { useEffect, useReducer, useState } from 'preact/hooks'
 import Wrapper from './wrapper'
 import Uploader from './uploader'
 import Loader from './loader'
@@ -7,6 +7,8 @@ import Success from './success'
 
 const reducer = (state, action) => {
 	switch(action.type) {
+		case 'toggle':
+			return {...state, theme: state.theme === 'dark' ? 'light' : 'dark'};
 		case 'upload':
 			return {...state, pos: 0}
 		case 'uploading':
@@ -19,7 +21,16 @@ const reducer = (state, action) => {
 }
 
 const App = () => {
-	const [state, setState] = useReducer(reducer, {pos: 0, img: '', url: ''});
+	const [state, setState] = useReducer(reducer, {
+		pos: 0, img: '',
+		url: '', theme: localStorage.getItem('theme') || 'light'
+	});
+
+	useEffect(() => {
+		localStorage.setItem('theme', state.theme)
+		document.documentElement.setAttribute('data-theme', state.theme)
+	}, [state.theme]);
+
 	return <div id="app">
 			<Wrapper dispatch={setState} state={state}>
 			{

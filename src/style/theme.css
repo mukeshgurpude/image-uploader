@@ -1,0 +1,33 @@
+:root {
+  --bg: #FAFAFA;
+  --color: #444;
+  --card-bg: #fafafa;
+  --primary: #0E51AA;
+	--border-color: #E0E0E0;
+	--secondary-bg: #F6F8FB;
+	--success: #219653;
+	--max-width: 350px;
+
+  --dark-bg: #1D1D1D;
+  --dark-color: #FAFAFA;
+  --dark-card-bg: #302d2d;
+  --dark-secondary-bg: #1D1D1D;
+  --dark-border-color: #504d4d;
+}
+:root[data-theme=dark] {
+  --bg: var(--dark-bg);
+  --color: var(--dark-color);
+  --card-bg: var(--dark-card-bg);
+  --secondary-bg: var(--dark-bg);
+  --border-color: var(--dark-border-color);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    --bg: var(--dark-bg);
+    --color: var(--dark-color);
+    --card-bg: var(--dark-card-bg);
+    --secondary-bg: var(--dark-bg);
+    --border-color: var(--dark-border-color);
+  }
+}

@@ -4,7 +4,7 @@
   --loader-width: 15%;
   width: 300px;
   height: var(--height);
-  background-color: #e2e2e2;
+  background-color: var(--secondary-bg);
   border-radius: var(--radius);
   position: relative;
 }
