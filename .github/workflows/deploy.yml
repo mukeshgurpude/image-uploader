@@ -21,7 +21,7 @@ jobs:
           git config --global user.email mukeshgurpude02@gmail.com
           git config --global user.name "Mukesh Gurpude"
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        with:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           URL: ${{ secrets.url }}
           PUBLIC_KEY: ${{ secrets.public_key }}
