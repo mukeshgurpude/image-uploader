@@ -1,7 +1,7 @@
 {
   "name": "image-uploader",
   "short_name": "image-uploader",
-  "start_url": "/",
+  "start_url": "/image-uploader",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
